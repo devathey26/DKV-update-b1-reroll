@@ -11,21 +11,21 @@ export const LogModal: React.FC<LogModalProps> = ({ isOpen, onClose }) => {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-      <div 
-        className="absolute inset-0 bg-black/80 backdrop-blur-md transition-opacity"
+      <div
+        className="absolute inset-0 bg-black/80 backdrop-blur-md transition-opacity duration-fast"
         onClick={onClose}
       ></div>
-      
-      <div className="relative bg-[#0f172a] border border-white/10 rounded-3xl shadow-2xl w-full max-w-lg overflow-hidden animate-slide-up">
+
+      <div className="relative bg-[#0f172a] border border-white/10 rounded-3xl shadow-2xl w-full max-w-lg overflow-hidden animate-modal-enter">
         {/* Header */}
         <div className="bg-white/5 px-6 py-5 border-b border-white/5 flex justify-between items-center">
           <div className="flex items-center gap-2 text-white">
              <Sparkles className="text-primary" size={20} />
              <h2 className="text-xl font-heading font-bold">What's New</h2>
           </div>
-          <button 
+          <button
             onClick={onClose}
-            className="w-8 h-8 flex items-center justify-center rounded-full bg-white/10 text-slate-400 hover:bg-white/20 hover:text-white transition-colors"
+            className="w-8 h-8 flex items-center justify-center rounded-full bg-white/10 text-slate-400 hover:bg-white/20 hover:text-white transition-all duration-fast ease-smooth active:scale-95"
           >
             <X size={18} />
           </button>
@@ -67,9 +67,9 @@ export const LogModal: React.FC<LogModalProps> = ({ isOpen, onClose }) => {
         </div>
 
         <div className="p-4 bg-black/20 border-t border-white/5 text-center">
-            <button 
+            <button
               onClick={onClose}
-              className="w-full bg-white text-black font-bold py-3 rounded-xl hover:bg-slate-200 transition-colors"
+              className="w-full bg-white text-black font-bold py-3 rounded-xl hover:bg-slate-200 transition-all duration-fast ease-smooth active:scale-[0.98]"
             >
               Keren! 🔥
             </button>

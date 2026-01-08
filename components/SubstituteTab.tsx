@@ -13,9 +13,9 @@ export const SubstituteTab: React.FC = () => {
   }
 
   return (
-    <div className="pb-20">
-      <div className="sticky top-0 z-30 -mx-4 px-4 py-3 mb-6 bg-[#0f172a]/80 backdrop-blur-lg border-b border-white/10 shadow-sm">
-        <h2 className="text-2xl font-heading font-bold text-white flex items-center gap-3 animate-fade-in">
+    <div className="pb-20 animate-page-enter">
+      <div className="mb-8">
+        <h2 className="text-2xl font-heading font-bold text-white flex items-center gap-3">
           <Timer className="text-accent" size={28} />
           Team Teaching
         </h2>
@@ -23,7 +23,7 @@ export const SubstituteTab: React.FC = () => {
 
       <div className="space-y-4">
         {substituteData.map((sub, index) => (
-          <div key={index} className="bg-white/5 border-l-4 border-primary rounded-r-xl p-5 flex flex-col md:flex-row md:items-center gap-4 hover:bg-white/10 transition-all">
+          <div key={index} className="bg-white/5 border-l-4 border-primary rounded-r-xl p-5 flex flex-col md:flex-row md:items-center gap-4 hover:bg-white/10 transition-all duration-fast ease-smooth active:scale-[0.99]">
             <div className="bg-primary/20 p-3 rounded-full text-primary w-fit">
               <UserCheck size={24} />
             </div>

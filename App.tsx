@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Calendar, Users, Zap, Timer, Sparkles, LayoutGrid, UsersRound, Menu, UserCheck } from 'lucide-react';
 import { HeroSection } from './components/HeroSection';
 import { InfoCard } from './components/InfoCard';
@@ -15,6 +15,20 @@ function App() {
   const [activeTab, setActiveTab] = useState<TabType>('jadwal');
   const [isLogOpen, setIsLogOpen] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const contentRef = useRef<HTMLDivElement>(null);
+
+  const handleTabChange = (newTab: TabType) => {
+    setActiveTab(newTab);
+  };
+
+  useEffect(() => {
+    if (contentRef.current) {
+      const header = contentRef.current.querySelector('h2');
+      if (header) {
+        header.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+  }, [activeTab]);
 
   // Menu Configuration
   const tabs = [
@@ -43,7 +57,7 @@ function App() {
            <div className="flex items-center gap-3">
              <button
                onClick={() => setIsSidebarOpen(true)}
-               className="bg-white/5 hover:bg-white/10 text-slate-300 p-2 rounded-full transition-all border border-white/5"
+               className="bg-white/5 hover:bg-white/10 text-slate-300 p-2 rounded-full transition-all duration-fast ease-smooth border border-white/5 active:scale-95"
              >
                <Menu size={18} />
              </button>
@@ -51,7 +65,7 @@ function App() {
            </div>
            <button
              onClick={() => setIsLogOpen(true)}
-             className="bg-white/5 hover:bg-white/10 text-slate-300 p-2 rounded-full transition-all border border-white/5"
+             className="bg-white/5 hover:bg-white/10 text-slate-300 p-2 rounded-full transition-all duration-fast ease-smooth border border-white/5 active:scale-95"
            >
              <Sparkles size={18} />
            </button>
@@ -66,8 +80,8 @@ function App() {
         </div>
 
         {/* Content Area */}
-        <div className="flex-1" key={activeTab}>
-          {activeTab === 'jadwal' && <ScheduleTab onNavigateToTeacher={() => setActiveTab('guru')} />}
+        <div className="flex-1" key={activeTab} ref={contentRef}>
+          {activeTab === 'jadwal' && <ScheduleTab onNavigateToTeacher={() => handleTabChange('guru')} />}
           {activeTab === 'piketKelas' && <StudentPicketTab />}
           {activeTab === 'guru' && <TeacherTab />}
           {activeTab === 'pengganti' && <SubstituteTab />}
@@ -93,18 +107,18 @@ function App() {
               return (
                 <button
                   key={tab.id}
-                  onClick={() => setActiveTab(tab.id as TabType)}
+                  onClick={() => handleTabChange(tab.id as TabType)}
                   className={`
-                    relative flex flex-col items-center justify-center w-full py-2 rounded-xl transition-all duration-300
+                    relative flex flex-col items-center justify-center w-full py-2 rounded-xl transition-all duration-normal ease-smooth active:scale-95
                     ${isActive ? 'text-white' : 'text-slate-500 hover:text-slate-300'}
                   `}
                 >
                   {/* Glow Effect behind active icon */}
                   {isActive && (
-                    <div className="absolute inset-0 bg-primary/20 blur-md rounded-xl"></div>
+                    <div className="absolute inset-0 bg-primary/20 blur-md rounded-xl transition-opacity duration-fast"></div>
                   )}
 
-                  <div className={`relative z-10 transition-transform duration-300 ${isActive ? '-translate-y-1' : ''}`}>
+                  <div className={`relative z-10 transition-transform duration-normal ease-smooth ${isActive ? '-translate-y-1' : ''}`}>
                     {tab.icon}
                   </div>
 

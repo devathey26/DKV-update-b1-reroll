@@ -5,8 +5,8 @@ export const InfoCard: React.FC = () => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mb-6">
       {/* Ruang Kelas */}
-      <div className="bg-white/5 backdrop-blur-xl border border-white/10 p-4 rounded-2xl flex items-center gap-4 hover:bg-white/10 transition-all group">
-        <div className="bg-blue-500/20 p-3 rounded-xl text-blue-400 group-hover:scale-110 transition-transform">
+      <div className="bg-white/5 backdrop-blur-xl border border-white/10 p-4 rounded-2xl flex items-center gap-4 hover:bg-white/10 transition-all duration-fast ease-smooth group active:scale-[0.98]">
+        <div className="bg-blue-500/20 p-3 rounded-xl text-blue-400 group-hover:scale-110 transition-transform duration-fast">
           <MapPin size={24} />
         </div>
         <div>
@@ -16,9 +16,9 @@ export const InfoCard: React.FC = () => {
       </div>
 
       {/* Wali Kelas */}
-      <div className="bg-white/5 backdrop-blur-xl border border-white/10 p-4 rounded-2xl flex items-center justify-between gap-3 md:col-span-1 group hover:bg-white/10 transition-all relative">
+      <div className="bg-white/5 backdrop-blur-xl border border-white/10 p-4 rounded-2xl flex items-center justify-between gap-3 md:col-span-1 group hover:bg-white/10 transition-all duration-fast ease-smooth relative active:scale-[0.98]">
         <div className="flex items-center gap-3 overflow-hidden">
-          <div className="bg-purple-500/20 p-3 rounded-xl text-purple-400 group-hover:scale-110 transition-transform shrink-0">
+          <div className="bg-purple-500/20 p-3 rounded-xl text-purple-400 group-hover:scale-110 transition-transform duration-fast shrink-0">
             <GraduationCap size={24} />
           </div>
           <div className="min-w-0">
@@ -30,16 +30,16 @@ export const InfoCard: React.FC = () => {
           href="https://wa.me/6281338401856"
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-emerald-500/20 hover:bg-emerald-500 text-emerald-400 hover:text-white p-2 rounded-lg transition-all shrink-0"
+          className="bg-emerald-500/20 hover:bg-emerald-500 text-emerald-400 hover:text-white p-2 rounded-lg transition-all duration-fast ease-smooth shrink-0 active:scale-95"
         >
           <MessageCircle size={18} />
         </a>
       </div>
 
       {/* Guru BK */}
-      <div className="bg-white/5 backdrop-blur-xl border border-white/10 p-4 rounded-2xl flex items-center justify-between gap-3 md:col-span-1 group hover:bg-white/10 transition-all relative">
+      <div className="bg-white/5 backdrop-blur-xl border border-white/10 p-4 rounded-2xl flex items-center justify-between gap-3 md:col-span-1 group hover:bg-white/10 transition-all duration-fast ease-smooth relative active:scale-[0.98]">
         <div className="flex items-center gap-3 overflow-hidden">
-          <div className="bg-pink-500/20 p-3 rounded-xl text-pink-400 group-hover:scale-110 transition-transform shrink-0">
+          <div className="bg-pink-500/20 p-3 rounded-xl text-pink-400 group-hover:scale-110 transition-transform duration-fast shrink-0">
             <Shield size={24} />
           </div>
           <div className="min-w-0">
@@ -51,7 +51,7 @@ export const InfoCard: React.FC = () => {
           href="https://wa.me/6281905583802"
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-emerald-500/20 hover:bg-emerald-500 text-emerald-400 hover:text-white p-2 rounded-lg transition-all shrink-0"
+          className="bg-emerald-500/20 hover:bg-emerald-500 text-emerald-400 hover:text-white p-2 rounded-lg transition-all duration-fast ease-smooth shrink-0 active:scale-95"
         >
           <MessageCircle size={18} />
         </a>
