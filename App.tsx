@@ -9,6 +9,7 @@ import { SubstituteTab } from './components/SubstituteTab';
 import { PicketTab } from './components/PicketTab';
 import { LogModal } from './components/LogModal';
 import { Sidebar } from './components/Sidebar';
+import { PJOKInfoCard } from './components/PJOKInfoCard';
 import { TabType } from './types';
 
 function App() {
@@ -137,6 +138,7 @@ function App() {
 
       <LogModal isOpen={isLogOpen} onClose={() => setIsLogOpen(false)} />
       <Sidebar isOpen={isSidebarOpen} onClose={() => setIsSidebarOpen(false)} />
+      <PJOKInfoCard />
     </div>
   );
 }

@@ -33,13 +33,45 @@ export const LogModal: React.FC<LogModalProps> = ({ isOpen, onClose }) => {
 
         {/* Body */}
         <div className="p-6 max-h-[60vh] overflow-y-auto space-y-8">
-          
+
+          <div className="relative pl-8 border-l border-primary/30">
+            <span className="absolute -left-[5px] top-0 w-2.5 h-2.5 rounded-full bg-primary shadow-[0_0_10px_rgba(139,92,246,0.5)]"></span>
+            <div className="mb-2 flex flex-wrap items-center gap-2">
+                <h3 className="font-bold text-white text-lg">Kavitwo Connect</h3>
+                <span className="text-[10px] font-bold text-accent bg-accent/10 px-2 py-1 rounded-full border border-accent/30">v2.1</span>
+                <span className="text-[10px] font-bold text-yellow-400 bg-yellow-400/10 px-2 py-0.5 rounded border border-yellow-400/20">CURRENT</span>
+            </div>
+            <p className="text-sm text-slate-400 mb-3">Peningkatan performa dan penyempurnaan animasi</p>
+            <ul className="space-y-2 text-sm text-slate-400">
+              <li className="flex gap-2">
+                <span className="text-accent">●</span>
+                <span>Peningkatan performa dan stabilitas, terutama pada perangkat mobile.</span>
+              </li>
+              <li className="flex gap-2">
+                <span className="text-accent">●</span>
+                <span>Penyempurnaan animasi agar lebih smooth, sederhana, dan konsisten.</span>
+              </li>
+              <li className="flex gap-2">
+                <span className="text-accent">●</span>
+                <span>Perbaikan navigasi untuk pengalaman berpindah halaman yang lebih nyaman.</span>
+              </li>
+              <li className="flex gap-2">
+                <span className="text-accent">●</span>
+                <span>Pembaruan jadwal mingguan (hari Jumat) dan penyeragaman jam pelajaran.</span>
+              </li>
+              <li className="flex gap-2">
+                <span className="text-accent">●</span>
+                <span>Penambahan kartu informasi PJOK.</span>
+              </li>
+            </ul>
+          </div>
+
           <div className="relative pl-8 border-l border-primary/30">
             <span className="absolute -left-[5px] top-0 w-2.5 h-2.5 rounded-full bg-primary shadow-[0_0_10px_rgba(139,92,246,0.5)]"></span>
             <div className="mb-2 flex flex-wrap items-center gap-2">
                 <h3 className="font-bold text-white text-lg">Kavitwo Connect</h3>
                 <span className="text-[10px] font-bold text-accent bg-accent/10 px-2 py-1 rounded-full border border-accent/30">v2.0</span>
-                <span className="text-[10px] font-bold text-primary bg-primary/10 px-2 py-0.5 rounded border border-primary/20">ULTIMATE UPDATE</span>
+                <span className="text-[10px] font-bold text-primary bg-primary/10 px-2 py-0.5 rounded border border-primary/20">MAJOR UPDATE</span>
             </div>
             <p className="text-sm text-slate-400 mb-3">Redesign total dengan gaya modern & implementasi bahasa desain Glasmorphism</p>
             <ul className="space-y-2 text-sm text-slate-400">

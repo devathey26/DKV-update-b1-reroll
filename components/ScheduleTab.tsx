@@ -32,12 +32,12 @@ export const ScheduleTab: React.FC<ScheduleTabProps> = () => {
         const isOpen = openDay === day;
 
         return (
-          <div key={day} className={`relative rounded-3xl overflow-hidden transition-all duration-normal ease-smooth ${isToday ? 'bg-white/10 border-2 border-amber-400/60 shadow-[0_0_30px_rgba(251,191,36,0.25)]' : 'bg-white/5 border border-white/5'}`}>
+          <div key={day} className={`relative rounded-3xl overflow-hidden ${isToday ? 'bg-white/10 border-2 border-amber-400/60 shadow-[0_0_30px_rgba(251,191,36,0.25)]' : 'bg-white/5 border border-white/5'}`}>
 
             {/* Header - Clickable */}
             <button
               onClick={() => toggleDay(day)}
-              className={`w-full px-6 py-4 flex items-center justify-between ${isToday ? 'bg-gradient-to-r from-amber-500/20 to-transparent' : 'bg-white/5'} hover:bg-white/10 transition-all duration-fast ease-smooth active:scale-[0.99]`}
+              className={`w-full px-6 py-4 flex items-center justify-between ${isToday ? 'bg-gradient-to-r from-amber-500/20 to-transparent' : 'bg-white/5'} hover:bg-white/10 transition-all duration-fast ease-smooth`}
             >
               <div className="flex items-center gap-3">
                 <Calendar size={18} className={isToday ? 'text-amber-400' : 'text-slate-500'} />
@@ -61,7 +61,7 @@ export const ScheduleTab: React.FC<ScheduleTabProps> = () => {
 
             {/* List View - Collapsible */}
             {isOpen && (
-              <div className="divide-y divide-white/5 animate-page-enter">
+              <div className="divide-y divide-white/5">
                 {rows.map((row, idx) => {
                   const isBreak = row.subject === 'ISTIRAHAT';
                   if (isBreak) {
